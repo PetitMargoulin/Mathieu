@@ -144,12 +144,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\entites\Button.cpp" />
     <ClCompile Include="source\entites\Character.cpp" />
     <ClCompile Include="source\entites\Weapons\Rapier.cpp" />
     <ClCompile Include="source\entites\Weapons\Weapon.cpp" />
     <ClCompile Include="source\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\entites\Button.h" />
     <ClInclude Include="source\entites\Character.h" />
     <ClInclude Include="source\entites\Weapons\Rapier.h" />
     <ClInclude Include="source\entites\Weapons\Weapon.h" />
