@@ -41,7 +41,7 @@ int main()
 	pos.push_back(sf::Vector2f(-10, 10));
 	pos.push_back(sf::Vector2f(-10, 0));
 	pos.push_back(sf::Vector2f(0, -20));
-	Animation* animTest = new Animation(&spriteTest2, pos, 1);
+	Animation* animTest = new Animation(&spriteTest2, pos, 0.1);
 
 
 	while (window.isOpen())
@@ -72,7 +72,6 @@ int main()
 			animTest->next();
 		}
 		moveSprite(&spriteTest1, &spriteTest2);
-		sf::sleep(sf::milliseconds(500));
 
 		window.clear();
 		window.draw(spriteTest1);
