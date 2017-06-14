@@ -36,12 +36,12 @@ int main()
 	spriteTest2.setPosition(sf::Vector2f(50, 10));
 
 	std::vector <sf::Vector2f> pos;
-	pos.push_back(sf::Vector2f(10, 0));
-	pos.push_back(sf::Vector2f(10, 10));
-	pos.push_back(sf::Vector2f(-10, 10));
-	pos.push_back(sf::Vector2f(-10, 0));
-	pos.push_back(sf::Vector2f(0, -20));
-	Animation* animTest = new Animation(&spriteTest2, pos, 0.1);
+	pos.push_back(sf::Vector2f(50, 0));
+	pos.push_back(sf::Vector2f(50, 50));
+	pos.push_back(sf::Vector2f(-50, 50));
+	pos.push_back(sf::Vector2f(-50, 0));
+	pos.push_back(sf::Vector2f(0, -100));
+	Animation* animTest = new Animation(&spriteTest2, pos, 0.5);
 
 
 	while (window.isOpen())
@@ -72,6 +72,7 @@ int main()
 			animTest->next();
 		}
 		moveSprite(&spriteTest1, &spriteTest2);
+		sf::sleep(sf::milliseconds(50));
 
 		window.clear();
 		window.draw(spriteTest1);

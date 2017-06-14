@@ -2,6 +2,7 @@
 #include <SFML\Graphics.hpp>
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 #define log(x) std::cout << x << std::endl
 
@@ -19,8 +20,11 @@ private:
 	std::vector <sf::Vector2f> m_positions;
 	bool m_animating;
 	int m_indexObjectivePos;
+	bool m_onOrigin;
 	sf::Vector2f m_currentPos;
 	float m_speed;
+	float m_constSpeed;
+	float m_distance;
 	float dir_x;
 	float dir_y;
 };
