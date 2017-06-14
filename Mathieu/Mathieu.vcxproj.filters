@@ -27,7 +27,7 @@
     <ClCompile Include="source\entites\Weapons\Rapier.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\entites\Button.cpp">
+    <ClCompile Include="source\Animation.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="source\entites\Weapons\Rapier.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="source\entites\Button.h">
+    <ClInclude Include="source\Animation.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
