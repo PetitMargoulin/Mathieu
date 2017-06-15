@@ -15,6 +15,7 @@ public:
 	void stop();
 	void setDir();
 	void next();
+	float adjust(float value) const;
 private:
 	sf::Sprite* m_sprite;
 	std::vector <sf::Vector2f> m_positions;

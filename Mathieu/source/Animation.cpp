@@ -35,12 +35,19 @@ void Animation::setDir()
 
 void Animation::next()
 {
+	float moveX;
+	float moveY;
+
 	if (m_animating)
 	{
 		if (m_onOrigin)
 			this->setDir();
-		m_sprite->move(sf::Vector2f(roundf(dir_x * m_speed), roundf(dir_y * m_speed)));
-		m_currentPos = m_currentPos + sf::Vector2f(roundf(dir_x * m_speed), roundf(dir_y * m_speed));
+
+		moveX = roundf(this->adjust(dir_x * m_speed));
+		moveY = roundf(this->adjust(dir_y * m_speed));
+
+		m_sprite->move(sf::Vector2f(moveX, moveY));
+		m_currentPos = m_currentPos + sf::Vector2f(moveX, moveY);
 		m_onOrigin = false;
 
 		std::cout << "m_currentPos: (" << m_currentPos.x << "," << m_currentPos.y << ")" << std::endl;
@@ -48,7 +55,12 @@ void Animation::next()
 		if (m_currentPos == m_positions[m_indexObjectivePos])
 		{
 			if (m_positions.size() <= m_indexObjectivePos + 1)
+			{
 				m_animating = false;
+				m_indexObjectivePos = 0;
+				m_onOrigin = true;
+				m_currentPos = sf::Vector2f(0, 0);
+			}
 			else
 			{
 				m_indexObjectivePos++;
@@ -57,5 +69,15 @@ void Animation::next()
 			}
 		}
 	}
+}
+
+float Animation::adjust(float value) const
+{
+	if (value < 1 && value > 0)
+		return 1;
+	else if (value < 0 && value > -1)
+		return -1;
+	else
+		return value;
 }
 

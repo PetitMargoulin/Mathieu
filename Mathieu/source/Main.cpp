@@ -72,7 +72,7 @@ int main()
 			animTest->next();
 		}
 		moveSprite(&spriteTest1, &spriteTest2);
-		sf::sleep(sf::milliseconds(50));
+		//sf::sleep(sf::milliseconds(50));
 
 		window.clear();
 		window.draw(spriteTest1);
