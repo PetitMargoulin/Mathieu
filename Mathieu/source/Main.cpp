@@ -2,6 +2,7 @@
 #include <iostream>
 #include <thread>
 #include "animation\Animation.h"
+#include "map\Block.h"
 
 #define log(x) std::cout << x << std::endl
 
@@ -18,20 +19,20 @@ int main()
 	sf::Texture textureTest2;
 	sf::Sprite spriteTest2;
 
-	if (!textureTest1.loadFromFile("ressources/textures/Simple_Green_Texture.jpg"))
+	if (!textureTest1.loadFromFile("ressources/textures/Simple_Green_Texture.jpg", sf::IntRect(10, 10, 32, 32)))
 		log("error");
 	textureTest1.setSmooth(true);
 
-	if (!textureTest2.loadFromFile("ressources/textures/Simple_Red_Texture.jpg"))
+	if (!textureTest2.loadFromFile("ressources/textures/Simple_Red_Texture.jpg", sf::IntRect(10, 10, 32, 32)))
 		log("error");
 	textureTest2.setSmooth(true);
 	
 	spriteTest1.setTexture(textureTest1);
-	spriteTest1.setTextureRect(sf::IntRect(10, 10, 32, 32));
+	//spriteTest1.setTextureRect(sf::IntRect(10, 10, 32, 32));
 	spriteTest1.setPosition(sf::Vector2f(10, 50));
 
 	spriteTest2.setTexture(textureTest2);
-	spriteTest2.setTextureRect(sf::IntRect(10, 10, 32, 32));
+	//spriteTest2.setTextureRect(sf::IntRect(10, 10, 32, 32));
 	spriteTest2.setPosition(sf::Vector2f(50, 10));
 
 	//A simple example of creating an animation
@@ -42,6 +43,11 @@ int main()
 	pos.push_back(sf::Vector2f(-50, 0));
 	pos.push_back(sf::Vector2f(0, -100));
 	Animation* animTest = new Animation(&spriteTest2, pos, 0.5);
+
+	Block* myBlock = new Block(&window, 20, 400, 40, 40, ground);
+	Block* myBlock1 = new Block(&window, 70, 400, 80, 20, ground);
+	Block* myBlock2 = new Block(&window, 20, 500, 100, 100, ground);
+	Block* myBlock3 = new Block(&window, 140, 500, 10, 10, ground);
 
 
 	while (window.isOpen())
@@ -66,6 +72,10 @@ int main()
 		window.clear();
 		window.draw(spriteTest1);
 		window.draw(spriteTest2);
+		myBlock->draw();
+		myBlock1->draw();
+		myBlock2->draw();
+		myBlock3->draw();
 		window.display();
 	}
 
