@@ -27,10 +27,10 @@
     <ClCompile Include="source\entites\Weapons\Rapier.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\Animation.cpp">
+    <ClCompile Include="source\Menu\Button.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\Menu\Button.cpp">
+    <ClCompile Include="source\Animation\Animation.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,10 +44,10 @@
     <ClInclude Include="source\entites\Weapons\Rapier.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="source\Animation.h">
+    <ClInclude Include="source\Menu\Button.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="source\Menu\Button.h">
+    <ClInclude Include="source\Animation\Animation.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

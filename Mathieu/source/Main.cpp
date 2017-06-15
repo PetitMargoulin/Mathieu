@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <thread>
-#include "Animation.h"
+#include "animation\Animation.h"
 
 #define log(x) std::cout << x << std::endl
 
@@ -10,7 +10,6 @@ void moveSprite(sf::Sprite* spriteTest1, sf::Sprite* spriteTest2);
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
-	sf::Window& test = window;
 	sf::Event event;
 
 	sf::Texture textureTest1;
@@ -35,6 +34,7 @@ int main()
 	spriteTest2.setTextureRect(sf::IntRect(10, 10, 32, 32));
 	spriteTest2.setPosition(sf::Vector2f(50, 10));
 
+	//A simple example of creating an animation
 	std::vector <sf::Vector2f> pos;
 	pos.push_back(sf::Vector2f(50, 0));
 	pos.push_back(sf::Vector2f(50, 50));
@@ -58,21 +58,10 @@ int main()
 					animTest->start();
 				}
 			}
-			//else if (event.type == sf::Event::KeyReleased)
-			//{
-			//	if (event.key.code == sf::Keyboard::Space && animTest->isAnimating())
-			//	{
-			//		animTest->stop();
-			//	}
-			//}
 		}
 
-		if (animTest->isAnimating())
-		{
-			animTest->next();
-		}
+		animTest->next();	//To do the next step of the animation
 		moveSprite(&spriteTest1, &spriteTest2);
-		//sf::sleep(sf::milliseconds(50));
 
 		window.clear();
 		window.draw(spriteTest1);

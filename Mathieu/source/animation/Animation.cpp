@@ -50,8 +50,6 @@ void Animation::next()
 		m_currentPos = m_currentPos + sf::Vector2f(moveX, moveY);
 		m_onOrigin = false;
 
-		std::cout << "m_currentPos: (" << m_currentPos.x << "," << m_currentPos.y << ")" << std::endl;
-		std::cout << "m_positions: (" << m_positions[m_indexObjectivePos].x << "," << m_positions[m_indexObjectivePos].y << ")" << std::endl;
 		if (m_currentPos == m_positions[m_indexObjectivePos])
 		{
 			if (m_positions.size() <= m_indexObjectivePos + 1)

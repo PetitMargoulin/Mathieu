@@ -20,7 +20,7 @@ private:
 	sf::Sprite* m_sprite;
 	std::vector <sf::Vector2f> m_positions;
 	bool m_animating;
-	int m_indexObjectivePos;
+	unsigned int m_indexObjectivePos;
 	bool m_onOrigin;
 	sf::Vector2f m_currentPos;
 	float m_speed;
