@@ -3,6 +3,7 @@
 #include <thread>
 #include "animation\Animation.h"
 #include "entites\map\Block.h"
+#include "Menu\Button.h"
 
 #define log(x) std::cout << x << std::endl
 
@@ -11,7 +12,10 @@ void moveSprite(sf::Sprite* spriteTest1, sf::Sprite* spriteTest2);
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
+	window.setFramerateLimit(600);
 	sf::Event event;
+
+	Button bPlay("play", 200, 100, 200, 200, &window);
 
 	sf::Texture textureTest1;
 	sf::Sprite spriteTest1;
@@ -76,6 +80,7 @@ int main()
 		myBlock1->draw();
 		myBlock2->draw();
 		myBlock3->draw();
+		bPlay.draw();
 		window.display();
 	}
 
