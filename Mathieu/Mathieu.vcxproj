@@ -149,7 +149,7 @@
     <ClCompile Include="source\entites\Weapons\Rapier.cpp" />
     <ClCompile Include="source\entites\Weapons\Weapon.cpp" />
     <ClCompile Include="source\Main.cpp" />
-    <ClCompile Include="source\map\Block.cpp" />
+    <ClCompile Include="source\entites\map\Block.cpp" />
     <ClCompile Include="source\Menu\Button.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +157,7 @@
     <ClInclude Include="source\entites\Character.h" />
     <ClInclude Include="source\entites\Weapons\Rapier.h" />
     <ClInclude Include="source\entites\Weapons\Weapon.h" />
-    <ClInclude Include="source\map\Block.h" />
+    <ClInclude Include="source\entites\map\Block.h" />
     <ClInclude Include="source\Menu\Button.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

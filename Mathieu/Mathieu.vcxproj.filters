@@ -33,7 +33,7 @@
     <ClCompile Include="source\Animation\Animation.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="source\map\Block.cpp">
+    <ClCompile Include="source\entites\map\Block.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,7 +53,7 @@
     <ClInclude Include="source\Animation\Animation.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="source\map\Block.h">
+    <ClInclude Include="source\entites\map\Block.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

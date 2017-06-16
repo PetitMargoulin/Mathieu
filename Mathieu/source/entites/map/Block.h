@@ -5,15 +5,15 @@
 
 #define log(x) std::cout << x << std::endl
 
-typedef enum
-{
-	ground,
-	wall
-} type;
-
 class Block
 {
 public:
+	typedef enum
+	{
+		ground,
+		wall
+	} type;
+
 	Block(sf::RenderWindow* win, float x, float y, float w, float h, type t);
 	~Block();
 	void initSprite();

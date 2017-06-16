@@ -2,7 +2,7 @@
 #include <iostream>
 #include <thread>
 #include "animation\Animation.h"
-#include "map\Block.h"
+#include "entites\map\Block.h"
 
 #define log(x) std::cout << x << std::endl
 
@@ -44,10 +44,10 @@ int main()
 	pos.push_back(sf::Vector2f(0, -100));
 	Animation* animTest = new Animation(&spriteTest2, pos, 0.5);
 
-	Block* myBlock = new Block(&window, 20, 400, 40, 40, ground);
-	Block* myBlock1 = new Block(&window, 70, 400, 80, 20, ground);
-	Block* myBlock2 = new Block(&window, 20, 500, 100, 100, ground);
-	Block* myBlock3 = new Block(&window, 140, 500, 10, 10, ground);
+	Block* myBlock = new Block(&window, 20, 400, 40, 40, Block::ground);
+	Block* myBlock1 = new Block(&window, 70, 400, 80, 20, Block::ground);
+	Block* myBlock2 = new Block(&window, 20, 500, 100, 100, Block::ground);
+	Block* myBlock3 = new Block(&window, 140, 500, 10, 10, Block::ground);
 
 
 	while (window.isOpen())
@@ -66,7 +66,7 @@ int main()
 			}
 		}
 
-		animTest->next();	//To do the next step of the animation
+		animTest->next();	//Do the next step of the animation
 		moveSprite(&spriteTest1, &spriteTest2);
 
 		window.clear();
