@@ -1,9 +1,10 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include <string>
-#include <SFML\Graphics\Font.hpp>
-
+#include <iostream>
 using namespace std;
+
+
 class Button
 {
 
@@ -13,6 +14,7 @@ public:
 	~Button();
 	bool isPressed();
 	void draw();
+	void mouseOn();
 
 private:
 	bool m_pressed;

@@ -4,6 +4,7 @@
 #include "animation\Animation.h"
 #include "entites\map\Block.h"
 #include "Menu\Button.h"
+#include "Menu\menu.h"
 
 #define log(x) std::cout << x << std::endl
 
@@ -15,7 +16,9 @@ int main()
 	window.setFramerateLimit(600);
 	sf::Event event;
 
-	Button bPlay("Nonjour mon petit Mathieu", 200, 100, 200, 200, &window);
+	allButton* buttons = new allButton;
+	initMenu(&window, buttons);
+	
 
 	sf::Texture textureTest1;
 	sf::Sprite spriteTest1;
@@ -70,6 +73,7 @@ int main()
 			}
 		}
 
+		mouse(buttons);
 		animTest->next();	//Do the next step of the animation
 		moveSprite(&spriteTest1, &spriteTest2);
 
@@ -80,7 +84,7 @@ int main()
 		myBlock1->draw();
 		myBlock2->draw();
 		myBlock3->draw();
-		bPlay.draw();
+		drawMenu(buttons);
 		window.display();
 	}
 

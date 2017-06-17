@@ -152,6 +152,7 @@
     <ClCompile Include="source\Main.cpp" />
     <ClCompile Include="source\entites\map\Block.cpp" />
     <ClCompile Include="source\Menu\Button.cpp" />
+    <ClCompile Include="source\Menu\menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\entites\Collider.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="source\entites\Weapons\Weapon.h" />
     <ClInclude Include="source\entites\map\Block.h" />
     <ClInclude Include="source\Menu\Button.h" />
+    <ClInclude Include="source\Menu\menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
