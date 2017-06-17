@@ -15,7 +15,7 @@ int main()
 	window.setFramerateLimit(600);
 	sf::Event event;
 
-	Button bPlay("play", 200, 100, 200, 200, &window);
+	Button bPlay("Nonjour mon petit Mathieu", 200, 100, 200, 200, &window);
 
 	sf::Texture textureTest1;
 	sf::Sprite spriteTest1;

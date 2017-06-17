@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include <string>
+#include <SFML\Graphics\Font.hpp>
 
 using namespace std;
 class Button
@@ -22,4 +23,6 @@ private:
 	sf::RenderWindow* m_window;
 	string m_name;
 	sf::RectangleShape rect;
+	sf::Font m_font;
+	sf::Text m_text;
 };
