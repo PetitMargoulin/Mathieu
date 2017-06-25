@@ -33,7 +33,7 @@ void Animation::setDir()
 	m_speed = m_constSpeed / m_distance;
 }
 
-void Animation::next()
+void Animation::next(float dt)
 {
 	float moveX;
 	float moveY;
@@ -43,8 +43,8 @@ void Animation::next()
 		if (m_onOrigin)
 			this->setDir();
 
-		moveX = roundf(this->adjust(dir_x * m_speed));
-		moveY = roundf(this->adjust(dir_y * m_speed));
+		moveX = roundf(this->adjust(dir_x * m_speed * dt));
+		moveY = roundf(this->adjust(dir_y * m_speed * dt));
 
 		m_sprite->move(sf::Vector2f(moveX, moveY));
 		m_currentPos = m_currentPos + sf::Vector2f(moveX, moveY);

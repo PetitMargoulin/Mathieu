@@ -7,7 +7,7 @@
 
 #define log(x) std::cout << x << std::endl
 
-void moveSprite(sf::Sprite* spriteTest1, sf::Sprite* spriteTest2);
+void moveSprite(sf::Sprite* spriteTest1, sf::Sprite* spriteTest2, float dt);
 
 int main()
 {
@@ -46,13 +46,15 @@ int main()
 	pos.push_back(sf::Vector2f(-50, 50));
 	pos.push_back(sf::Vector2f(-50, 0));
 	pos.push_back(sf::Vector2f(0, -100));
-	Animation* animTest = new Animation(&spriteTest2, pos, 0.5);
+	Animation* animTest = new Animation(&spriteTest2, pos, 250.f);
 
 	Block* myBlock = new Block(&window, 20, 400, 40, 40, Block::ground);
 	Block* myBlock1 = new Block(&window, 70, 400, 80, 20, Block::ground);
 	Block* myBlock2 = new Block(&window, 20, 500, 100, 100, Block::ground);
 	Block* myBlock3 = new Block(&window, 140, 500, 10, 10, Block::ground);
 
+	sf::Clock gameClock;
+	float dt;
 
 	while (window.isOpen())
 	{
@@ -70,8 +72,9 @@ int main()
 			}
 		}
 
-		animTest->next();	//Do the next step of the animation
-		moveSprite(&spriteTest1, &spriteTest2);
+		dt = gameClock.restart().asSeconds();	//Delta time between 2 frames
+		animTest->next(dt);	//Do the next step of the animation
+		moveSprite(&spriteTest1, &spriteTest2, dt);
 
 		window.clear();
 		window.draw(spriteTest1);
@@ -87,26 +90,27 @@ int main()
 	return 0;
 }
 
-void moveSprite(sf::Sprite* spriteTest1, sf::Sprite* spriteTest2)
+void moveSprite(sf::Sprite* spriteTest1, sf::Sprite* spriteTest2, float dt)
 {
+	float speed = 200.f;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		spriteTest1->move(sf::Vector2f(0, -0.2f));
-		spriteTest2->move(sf::Vector2f(0, -0.2f));
+		spriteTest1->move(sf::Vector2f(0, -speed * dt));
+		spriteTest2->move(sf::Vector2f(0, -speed * dt));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		spriteTest1->move(sf::Vector2f(0, 0.2f));
-		spriteTest2->move(sf::Vector2f(0, 0.2f));
+		spriteTest1->move(sf::Vector2f(0 * dt, speed * dt));
+		spriteTest2->move(sf::Vector2f(0, speed * dt));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		spriteTest1->move(sf::Vector2f(-0.2f, 0));
-		spriteTest2->move(sf::Vector2f(-0.2f, 0));
+		spriteTest1->move(sf::Vector2f(-speed * dt, 0));
+		spriteTest2->move(sf::Vector2f(-speed * dt, 0));
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		spriteTest1->move(sf::Vector2f(0.2f, 0));
-		spriteTest2->move(sf::Vector2f(0.2f, 0));
+		spriteTest1->move(sf::Vector2f(speed * dt, 0));
+		spriteTest2->move(sf::Vector2f(speed * dt, 0));
 	}
 }

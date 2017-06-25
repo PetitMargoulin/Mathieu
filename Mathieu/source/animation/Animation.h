@@ -14,7 +14,7 @@ public:
 	void start();
 	void stop();
 	void setDir();
-	void next();
+	void next(float dt);
 	float adjust(float value) const;
 private:
 	sf::Sprite* m_sprite;
